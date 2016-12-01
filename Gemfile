@@ -17,13 +17,13 @@
  gem 'coffee-rails', '~> 4.1.0'
  gem 'jquery-rails'
  gem 'turbolinks'
+ gem 'bootstrap-sass'
  gem 'bootstrap'
  gem 'figaro'
  gem 'pry'
 
  group :development, :test do
    gem 'byebug'
-   gem 'web-console', '~> 2.0'
    gem 'spring'
    gem 'rspec-rails'
    gem 'shoulda'
