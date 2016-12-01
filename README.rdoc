@@ -1,0 +1,10 @@
+== README
+
+*Blocipedia project for Bloc.io
+
+
+Created while attending Bloc.io as a project to demonstrate skills learned from Ruby and Ruby on Rails. This specific app will be a clone of a Wiki.
+
+
+Wikis are a great way to collaborate on community-sourced content. Whether the wiki is for a hobby or work-related project, you will build an app that lets users create their own wikis and share them publicly or privately with other collaborators.
+
