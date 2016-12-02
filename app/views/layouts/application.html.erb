@@ -10,13 +10,15 @@
 <body>
 
 <div class="container">
-	<ul class="nav nav-tabs">
-		<li><%= link_to "Home", welcome_index_path %></li>
-		<li><%= link_to "About", welcome_index_path %></li>
-	</ul>
-
-
-	<%= yield %>
+	<div class="row">
+		<ul class="nav nav-tabs text-right">
+			<li><%= link_to "Home", welcome_index_path %></li>
+			<li><%= link_to "About", welcome_about_path %></li>
+		</ul>
+	</div>
+	<div class="row">
+		<%= yield %>
+	</div>
 </div>
 
 </body>
