@@ -4,3 +4,23 @@
 h1 {
 	color: red;
 }
+.welcome-header {
+
+	font-size: 3rem;
+}
+
+.welcome-center{
+	margin-top: 50px;
+	padding: 50px 50px 0 50px;
+	width: 400px;
+	height: 300px;
+	border: 5px solid darkgrey;
+	div {
+		margin-top: 20px;
+	}
+}
+
+
+.welcome-footer {
+	margin-top: 100px;
+}
