@@ -12,8 +12,8 @@
   <div class="container">
     <div class="row app-header">
         <ul class="nav nav-tabs text-right">
-          <li><%= link_to "Home", welcome_index_path %></li>
-          <li><%= link_to "About", welcome_about_path %></li>
+          <li><%= link_to "Home", root_path %></li>
+          <li><%= link_to "About", about_path %></li>
 
           <div class="pull-right user-info">
             <% if user_signed_in? %>
@@ -27,6 +27,24 @@
         </ul>
     </div>
     <div class="row">
+
+      <% if flash[:notice] %>
+        <div class="alert alert-success">
+          <button type="button" class="close" data-dismiss="alert">&times;</button>
+          <%= flash[:notice] %>
+        </div>
+      <% elsif flash.now[:alert] %>
+        <div class="alert alert-danger">
+          <button type="button" class="close" data-dismiss="alert">&times;</button>
+          <%= flash[:alert] %>
+        </div>
+      <% elsif flash[:alert] %>
+        <div class="alert alert-danger">
+          <button type="button" class="close" data-dismiss="alert">&times;</button>
+          <%= flash[:alert] %>
+        </div>
+      <% end %>
+      
       <%= yield %>
     </div>
   </div>

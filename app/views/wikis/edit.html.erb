@@ -1,0 +1,25 @@
+<h1>Edit this Wiki</h1>
+<div class="col-md-6 center-block">
+  <%= form_for @wiki do |f| %>
+
+  <div class="form-group">
+    <%= f.label :title %>
+    <%= f.text_field :title, class: "form-control", placeholder: "Enter the New Wiki Title" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :body %>
+    <%= f.text_area :body, rows: 8, class: "form-control", placeholder: "Enter your Updated Wiki body" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :private %>
+    <%= f.check_box :private %>
+  </div>
+
+  <div class="form-group">
+    <%= f.submit "Save", class: "btn btn-success" %>
+  </div>
+</div>
+
+<% end %>
