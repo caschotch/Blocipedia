@@ -3,6 +3,8 @@ class WikisController < ApplicationController
 
   after_action :verify_authorized, :except => :index
 
+  include Pundit
+
   def index
     @wikis = Wiki.all
   end
@@ -21,7 +23,9 @@ class WikisController < ApplicationController
     @wiki = Wiki.new
     @wiki.title = params[:wiki][:title]
     @wiki.body = params[:wiki][:body]
+    @wiki.user = current_user
     @wiki.private = params[:wiki][:private]
+    
     authorize @wiki
 
     if @wiki.save

@@ -10,6 +10,8 @@
 
  group :development do
    gem 'sqlite3'
+   gem 'pry-rails'
+   gem 'faker'
  end
 
  gem 'sass-rails', '~> 5.0'
@@ -19,7 +21,6 @@
  gem 'turbolinks'
  gem 'bootstrap-sass'
  gem 'figaro'
- gem 'pry'
  gem 'devise'
  gem 'pundit'
 

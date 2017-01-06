@@ -1,5 +1,7 @@
 <div class="col-md-8">
   <h1><%= @wiki.title %></h1>
+  <p>Created by <%= @wiki.user.email %></p>
+
   <div>
     <p><%= @wiki.body %></p>
   </div>
