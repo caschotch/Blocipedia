@@ -8,4 +8,6 @@ Rails.application.routes.draw do
 
   root 'welcome#index'
 
+  resource :charges, only: [:new, :create, :edit]
+
 end

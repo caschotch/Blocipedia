@@ -41,3 +41,14 @@
 <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
 <%= link_to "Back", :back %>
+<div>
+  <% if current_user && current_user.premium? %>
+    <h4>If you would like to Downgrade to a Standard plan please click here!</h4>
+    <%= link_to "Cancel Premium Membership", edit_charges_path, :class => 'btn btn-danger' %>
+  <% elsif current_user && current_user.standard? %>
+    <p>Click here to upgrade to our Premium Plan Option!</p>
+    <%= link_to "Premium Membership", new_charges_path, :class => 'btn btn-primary' %>
+  <% else %>
+    <p>Premium Plan Option for registered users!</p>
+  <% end %>
+</div>

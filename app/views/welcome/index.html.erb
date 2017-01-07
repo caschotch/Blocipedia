@@ -12,8 +12,8 @@
     <h3>Create and share Markdown Wikis</h3>
     <div>
       <% if user_signed_in? %>
-        Signed in as: <strong><%= current_user.email %></strong>
-        <%= link_to "Public Wikis", wikis_path, :class => 'btn btn-info' %>
+        <p>Signed in as: <strong><%= current_user.email %></strong></p>
+        <%= link_to "All Wikis", wikis_path, :class => 'btn btn-info' %>
       <% else %>
         <%= link_to "Sign Up", new_user_registration_path, :class => 'btn btn-primary'  %> or
         <%= link_to "Sign In", new_user_session_path, :class => 'btn btn-primary'  %>
@@ -30,6 +30,13 @@
   <div class="col-md-2"></div>
   <div class="col-md-5 well">
     <h3>Create Private Wikis!</h3>
-    <p>Premium Plan Option</p>
+    <% if current_user && current_user.premium? %>
+      <h4>Welcome Premium Member!</h4>
+    <% elsif current_user && current_user.standard? %>
+      <p>Click here to upgrade to our Premium Plan Option!</p>
+      <%= link_to "Premium Membership", new_charges_path, :class => 'btn btn-primary' %>
+    <% else %>
+      <p>Premium Plan Option for registered users!</p>
+    <% end %>
   </div>
 </div>
