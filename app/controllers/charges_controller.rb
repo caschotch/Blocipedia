@@ -38,7 +38,7 @@ class ChargesController < ApplicationController
     }
   end
 
-  def edit
+  def to_standard
     current_user.standard!
     flash[:notice] = "We are sorry to see you cancel Premium Membership, #{current_user.email}."
     redirect_to root_path

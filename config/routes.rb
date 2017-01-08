@@ -8,6 +8,10 @@ Rails.application.routes.draw do
 
   root 'welcome#index'
 
-  resource :charges, only: [:new, :create, :edit]
+  resource :charges, only: [:new, :create] do
+    member do
+      get 'to_standard'
+    end
+  end
 
 end
