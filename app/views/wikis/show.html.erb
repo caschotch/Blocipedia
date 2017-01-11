@@ -3,7 +3,7 @@
   <p>Created by <%= @wiki.user.email %></p>
 
   <div>
-    <p><%= @wiki.body %></p>
+    <p><%= markdown(@wiki.body) %></p>
   </div>
 </div>
 
