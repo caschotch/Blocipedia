@@ -1,17 +1,31 @@
-<h1>List of Wikis</h1>
-
-<div class="col-md-8">
-<% @wikis.each do |wiki| %>
-  <div class="media">
-    <div class="media-body">
-      <h4 class="media-heading">
-        <%= link_to wiki.title, wiki %>
-      </h4>
-    </div>
+<div class="row">
+  <div class="col-md-8">
+    <h2 class="text-center">My Wikis</h2>
   </div>
-<% end %>
+  <div class="col-md-4">
+    <%= link_to "New", new_wiki_path, class: 'btn btn-success' %>
+  </div>
 </div>
 
-<div class="col-md-4">
-  <%= link_to "New", new_wiki_path, class: 'btn btn-success' %>
+<div class="row">
+  <div class="col-md-12">
+    <% @wikis.each do |wiki| %>
+    <div class="media">
+      <div class="media-body">
+
+        <h4 class="media-heading">
+          <%= link_to wiki.title, wiki %>
+        </h4>
+        <small>Created by <%= current_user.email %> on <%= wiki.created_at %>.</small>
+
+        <% if wiki.private? %>
+          <p class="text-right">This wiki is private and belongs to <%= wiki.user.email %></p>
+        <% end %>
+
+        <hr>
+
+      </div>
+    </div>
+    <% end %>
+  </div>
 </div>

@@ -9,4 +9,9 @@ RSpec.describe Wiki, type: :model do
       expect(wiki).to have_attributes(title: "New Wiki Title", body: "New Wiki Body")
     end
   end
+
+  describe "Associations" do
+    it { should belong_to(:user) }
+  end
+
 end

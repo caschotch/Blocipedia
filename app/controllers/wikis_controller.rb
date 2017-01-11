@@ -4,9 +4,10 @@ class WikisController < ApplicationController
   after_action :verify_authorized, :except => :index
 
   include Pundit
+  protect_from_forgery
 
   def index
-    @wikis = Wiki.all
+    @wikis = policy_scope(Wiki.all)
   end
 
   def show
@@ -25,7 +26,7 @@ class WikisController < ApplicationController
     @wiki.body = params[:wiki][:body]
     @wiki.user = current_user
     @wiki.private = params[:wiki][:private]
-    
+
     authorize @wiki
 
     if @wiki.save
