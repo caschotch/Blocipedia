@@ -16,12 +16,14 @@
         <h4 class="media-heading">
           <%= link_to wiki.title, wiki %>
         </h4>
-        <small>Created by <%= current_user.email %> on <%= wiki.created_at %>.</small>
 
+        <div class="text-right">
         <% if wiki.private? %>
-          <p class="text-right">This wiki is private and belongs to <%= wiki.user.email %></p>
+          <small>This Private Wiki belongs to <%= wiki.user.email %> created on <%= wiki.created_at %>.</small>
+        <% else %>
+          <small>Created by <%= wiki.user.email %> on <%= wiki.created_at %>.</small>
         <% end %>
-
+      </div>
         <hr>
 
       </div>
@@ -29,4 +31,6 @@
     <% end %>
   </div>
 </div>
-<%= paginate @wikis %>
+<div class="text-center">
+<h2><%= paginate @wikis %></h2>
+</div>
