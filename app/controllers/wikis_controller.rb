@@ -7,7 +7,8 @@ class WikisController < ApplicationController
   protect_from_forgery
 
   def index
-    @wikis = policy_scope(Wiki.all)
+    @wikis = policy_scope(Wiki).page(params[:page])
+    # @wikis = Wiki.page.per(10)
   end
 
   def show

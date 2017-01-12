@@ -25,6 +25,7 @@
   gem 'pundit'
   gem 'stripe'
   gem 'redcarpet'
+  gem 'kaminari'  
 
   group :development, :test do
     gem 'byebug'
