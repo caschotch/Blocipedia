@@ -14,4 +14,8 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :wikis do
+    resources :collaborators, only: [:new, :create, :destroy]
+  end
+
 end
